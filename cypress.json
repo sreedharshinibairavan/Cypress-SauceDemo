@@ -1,0 +1,14 @@
+{
+	"firstRun" : true,
+	"chromeWebSecurity": false,
+	"viewportWidth": 1440,
+	"viewportHeight": 900,
+	"baseURL": "https://www.saucedemo.com/",
+	"reporter": "mochawesome",
+	"reporterOptions": {
+		"reportDir": "cypress/results",
+		"overwrite": false,
+		"html": false,
+		"json": true
+	}
+}

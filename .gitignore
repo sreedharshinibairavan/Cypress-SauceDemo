@@ -1,0 +1,8 @@
+/node_modules/
+**/videos/
+**/screenshots/
+**/fixtures/
+**/results/
+**/downloads/
+/mochawesome-report/
+/mochawesome.json

@@ -22,11 +22,12 @@ jobs:
           paths:
             - ~/.npm
             - ~/.cache
-
+      # Running Eslint before kick starting the testing
       - run:
-          name: Running ESlint in the integration folder
+          name: Running ESlint
           command: npm run lint-check
 
+      # Running 
       - run: 
           name: Run Tests and Save report
           command: npx cypress run --env username=${USERNAME},password=${PASSWORD},username1=${USERNAME1},username2=${USERNAME2},username3=${USERNAME3} —-reporter mochawesome

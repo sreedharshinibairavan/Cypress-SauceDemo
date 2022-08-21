@@ -9,26 +9,36 @@ jobs:
       - restore_cache:
           keys:
             - cache-{{ checksum "package.json" }}
+
       # install npm dependencies and Cypress binary
       # if they were cached, this step is super quick
       - run:
           name: Install dependencies
           command: npm ci
+
       # save npm dependencies and Cypress binary for future runs
       - save_cache:
           key: cache-{{ checksum "package.json" }}
           paths:
             - ~/.npm
             - ~/.cache
+      # Running Eslint before kick starting the testing
+      - run:
+          name: Running ESlint
+          command: npm run lint-check
+
+      # Running 
       - run: 
           name: Run Tests and Save report
           command: npx cypress run --env username=${USERNAME},password=${PASSWORD},username1=${USERNAME1},username2=${USERNAME2},username3=${USERNAME3} —-reporter mochawesome
+
       - run:
           name: Generate reports
-          command: npx mochawesome-merge "cypress/results/*.json" > mochawesome.json
+          command: npm run merge-reports
+          
       - run:
           name: Convert JSON to HTML report file
-          command: npx mochawesome-report-generator mochawesome.json
+          command: npm run create-report
       
       # upload test coverage as artifact 
       - store_artifacts: 

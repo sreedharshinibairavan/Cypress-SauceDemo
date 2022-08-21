@@ -4,13 +4,15 @@
   "description": "Cypress SauceDemo Automaion",
   "main": "index.js",
   "scripts": {
+    "lint-check": "npx eslint 'cypress/integration/tests/*.js' 'cypress/support/*.js'",
+    "lint-fix": "npx eslint 'cypress/integration/tests/*.js' 'cypress/support/*.js' --fix",
     "cypress:open": "./node_modules/.bin/cypress open",
     "cypress:run": "./node_modules/.bin/cypress run",
-    "delete:reports": "rm cypress/results/*.json || true",
     "prereport": "npm run delete:reports",
     "report": "cypress run --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.json",
-    "start": "index.js",
-    "delete-mochawesome": "rm mochawesome.json"
+    "merge-reports": "npx mochawesome-merge 'cypress/results/*.json' > mochawesome.json",
+    "create-report": "npx marge mochawesome.json ",
+    "delete-mochawesome-results": "rm cypress/results/*.json mochawesome.json || true"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +22,9 @@
     "cypress-multi-reporters": "^1.6.1",
     "cypress-plugin-tab": "^1.0.5",
     "cypress-wait-until": "^1.7.2",
+    "eslint": "^8.22.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "mocha": "^10.0.0",
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^4.2.1",

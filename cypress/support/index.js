@@ -14,7 +14,7 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
+import './commands';
 cy.faker = require('faker');
 
 // Alternatively you can use CommonJS syntax:

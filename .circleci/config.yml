@@ -24,9 +24,8 @@ jobs:
             - ~/.cache
 
       - run:
-          name: ESlint
-          command: npx eslint cypress/integration/tests/**.js
-          command: npx eslint cypress/support/**.js
+          name: Running ESlint in the integration folder
+          command: npm run lint-check
 
       - run: 
           name: Run Tests and Save report
@@ -34,11 +33,11 @@ jobs:
 
       - run:
           name: Generate reports
-          command: npx mochawesome-merge "cypress/results/*.json" > mochawesome.json
+          command: npm run merge-reports
           
       - run:
           name: Convert JSON to HTML report file
-          command: npx mochawesome-report-generator mochawesome.json
+          command: npm run create-report
       
       # upload test coverage as artifact 
       - store_artifacts: 

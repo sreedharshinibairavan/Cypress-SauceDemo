@@ -30,9 +30,9 @@ Before pushing the code to this repo, run lint to make sure its all fine, else t
 * To run lint - `npm run lint-check`
 * To fix lint - `npm run lint-fix`
 
+To see this HTML report in CircleCI -
+* Enter into the build -> test -> Artifacts -> mochawesome-report/mochawesome.html (Click Open)
+
 Sample HTML Report - 
 
 <img width="864" alt="Screenshot 2022-08-22 at 7 52 13 PM" src="https://user-images.githubusercontent.com/58805239/185944721-2574e8a0-dafd-461a-99a1-651dbdda13ee.png">
-
-To see this HTML report in CircleCI -
-* Enter into the build -> test -> Artifacts -> mochawesome-report/mochawesome.html (Click Open)

@@ -32,4 +32,4 @@ Before pushing the code to this repo, run lint to make sure its all fine, else t
 
 Sample HTML Report - 
 
-<img width="925" alt="Screenshot 2022-08-22 at 5 23 57 PM" src="https://user-images.githubusercontent.com/58805239/185915253-27dbfc1c-9f88-4b85-81dc-7f41e343deae.png">
+<img width="864" alt="Screenshot 2022-08-22 at 7 52 13 PM" src="https://user-images.githubusercontent.com/58805239/185944721-2574e8a0-dafd-461a-99a1-651dbdda13ee.png">

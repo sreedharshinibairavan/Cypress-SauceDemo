@@ -1,6 +1,7 @@
 {
   "name": "cypress-automation",
   "version": "1.0.0",
+  "Author": "Sree Dharshini",
   "description": "Cypress SauceDemo Automaion",
   "main": "index.js",
   "scripts": {

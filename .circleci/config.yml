@@ -5,18 +5,18 @@ jobs:
       - image: cypress/base:12
     steps:
       - checkout
-      # restore folders with npm dependencies and Cypress binary
+      # Restore folders with npm dependencies and Cypress binary
       - restore_cache:
           keys:
             - cache-{{ checksum "package.json" }}
 
-      # install npm dependencies and Cypress binary
-      # if they were cached, this step is super quick
+      # Install npm dependencies and Cypress binary
+      # If they were cached, this step is super quick
       - run:
           name: Install dependencies
           command: npm ci
 
-      # save npm dependencies and Cypress binary for future runs
+      # Save npm dependencies and Cypress binary for future runs
       - save_cache:
           key: cache-{{ checksum "package.json" }}
           paths:
@@ -27,20 +27,22 @@ jobs:
           name: Running ESlint
           command: npm run lint-check
 
-      # Running 
+      # Running the tests
       - run: 
           name: Run Tests and Save report
           command: npx cypress run --env username=${USERNAME},password=${PASSWORD},username1=${USERNAME1},username2=${USERNAME2},username3=${USERNAME3} —-reporter mochawesome
 
+      # Generating the JSON report
       - run:
           name: Generate reports
           command: npm run merge-reports
-          
+
+      # Converting the JSON to HTML    
       - run:
           name: Convert JSON to HTML report file
           command: npm run create-report
       
-      # upload test coverage as artifact 
+      # Upload test coverage as artifact 
       - store_artifacts: 
           path: mochawesome-report
 

@@ -23,4 +23,4 @@ Steps to run the tests wirth report -
 
 Sample HTML Report - 
 
-<img width="1725" alt="Screenshot 2022-08-19 at 1 43 15 PM" src="https://user-images.githubusercontent.com/58805239/185575004-0a9db638-e3db-4fee-9b3f-1f7673449e07.png">
+<img width="864" alt="Screenshot 2022-08-22 at 7 52 13 PM" src="https://user-images.githubusercontent.com/58805239/185944721-2574e8a0-dafd-461a-99a1-651dbdda13ee.png">

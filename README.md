@@ -16,8 +16,8 @@ Prerequisites -
 * Install mochawesome for reports - `npm install --save-dev cypress-multi-reporters mocha-junit-reporter`
 
 Steps to run the tests locally through command prompt - 
-* Run command `npx cypress open --env username={username},password={password},username={username},password={password},username1={username1},username2={username2},username3={username3}` to run the tests on a browser
-* Run command `npx cypress run --env username={username},password={password},username={username},password={password},username1={username1},username2={username2},username3={username3}` to run the tests headless
+* Run command `npx cypress open --env username={username},password={password},username1={username1},username2={username2},username3={username3}` to run the tests on a browser
+* Run command `npx cypress run --env username={username},password={password},username1={username1},username2={username2},username3={username3}` to run the tests headless
 * After running the test once, you will have the mochawesome reports stored in your local. Before running it again, you will have to delete those reports to get the next report as expected. This is sorted in CI/CD and this step is just when you run the tests locally. Command to delete reports - `npm run delete-mochawesome-results`
 
 Steps to run the tests with report (Headless) - 
